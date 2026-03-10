@@ -685,3 +685,51 @@ p, span, li, label, input, textarea, select,
 .section-divider {
   margin-top: -2px !important;
 }
+
+/* ── NAV LINKS VISIBLE ON WHITE BACKGROUND ──────────────────── */
+/* When not scrolled, header is transparent — but on inner pages
+   or when announcement bar is present, background is white so
+   links must be dark */
+.header-wrapper .header__menu-item,
+.header-wrapper .header__menu-item span {
+  color: var(--furvora-text) !important;
+}
+
+.header-wrapper .header__menu-item:hover,
+.header-wrapper .header__menu-item:hover span {
+  color: var(--furvora-orange) !important;
+}
+
+.header-wrapper .header__icon svg {
+  fill: var(--furvora-text) !important;
+  stroke: var(--furvora-text) !important;
+}
+
+/* Only go white when scrolled AND on homepage over video */
+.header-wrapper--transparent:not(.header-wrapper--scrolled) .header__menu-item,
+.header-wrapper--transparent:not(.header-wrapper--scrolled) .header__icon svg {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* ── TOP ANNOUNCEMENT BAR — SLIM & PREMIUM ──────────────────── */
+.announcement-bar {
+  background-color: #1a1a1a !important;
+  padding: 8px 0 !important;
+}
+
+.announcement-bar__message,
+.announcement-bar__message * {
+  color: #f9f5f0 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.1rem !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 400 !important;
+}
+
+/* Hide the emojis via font-size trick won't work — 
+   update text in Shopify admin instead */
+.announcement-bar .slider-button svg {
+  fill: #f9f5f0 !important;
+}
