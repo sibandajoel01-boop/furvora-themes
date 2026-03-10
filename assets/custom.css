@@ -613,3 +613,75 @@ p, span, li, label, input, textarea, select,
   position: relative;
   z-index: 101 !important;
 }
+
+/* ── HOMEPAGE CLEANUP ───────────────────────────────────────── */
+
+/* Kill green backgrounds everywhere */
+.unique-announcement-bar-v1,
+#card-container,
+.color-scheme-3,
+[class*="scheme-3"] {
+  background-color: var(--furvora-cream) !important;
+}
+
+/* Feature tabs section — white background not green */
+.containerv8,
+.product_tab_sec {
+  background-color: #fff !important;
+}
+
+/* Trust/multicolumn section — clean cream */
+.multicolumn {
+  background-color: var(--furvora-cream) !important;
+}
+
+/* Multicolumn titles */
+.multicolumn-card__title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--furvora-text) !important;
+}
+
+.multicolumn-card p {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.3rem !important;
+  color: var(--furvora-text-soft) !important;
+}
+
+/* Section heading for trust bar */
+.multicolumn .title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
+  font-weight: 600 !important;
+}
+
+/* Reviews section background */
+#card-container {
+  background-color: var(--furvora-cream) !important;
+  padding: 40px 0 !important;
+}
+
+/* Review cards */
+.swiper-slide {
+  background: #fff !important;
+  border: 1px solid var(--furvora-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 16px rgba(42,34,25,0.06) !important;
+  animation: none !important;
+}
+
+/* Newsletter section */
+.newsletter {
+  background-color: #fff !important;
+}
+
+/* Tighten section spacing */
+.shopify-section {
+  margin-top: 0 !important;
+}
+
+/* Remove excessive padding between sections */
+.section-divider {
+  margin-top: -2px !important;
+}
