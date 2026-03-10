@@ -32,17 +32,17 @@
       "type": "featured-collection",
       "custom_css": [],
       "settings": {
-        "title": "<strong>Shop Our Best Sellers</strong>",
+        "title": "Our Products",
         "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "home",
-        "products_to_show": 5,
+        "products_to_show": 10,
         "columns_desktop": 5,
         "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
+        "show_view_all": true,
+        "view_all_style": "outline",
         "enable_desktop_slider": false,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -53,8 +53,8 @@
         "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 52
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "multicolumn_exkm4E": {
@@ -107,7 +107,7 @@
         "h2 {font-size: 38px; text-align: center; padding-left: 26px;}"
       ],
       "settings": {
-        "title": "Why Pet Parents Love Furvora",
+        "title": "Why Furvora",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -116,11 +116,11 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "rich_text_fTmy7t": {
@@ -129,7 +129,7 @@
         "heading_9btkYg": {
           "type": "heading",
           "settings": {
-            "heading": "Five Star Reviews",
+            "heading": "What Our Customers Say",
             "heading_size": "h0"
           }
         }
@@ -161,14 +161,14 @@
         "heading_8W3wdE": {
           "type": "heading",
           "settings": {
-            "heading": "Subscribe to our emails",
+            "heading": "Join the Furvora Family",
             "heading_size": "h1"
           }
         },
         "paragraph_hiFV36": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+            "text": "<p>Be the first to hear about new arrivals and exclusive offers.</p>"
           }
         },
         "email_form_DQMhQF": {
@@ -182,7 +182,7 @@
         "email_form_DQMhQF"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 52
