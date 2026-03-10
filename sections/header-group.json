@@ -1,0 +1,70 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "custom_liquid_UeHxER": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Announcement Bar with Infinite Scroll</title>\n    <style>\n              .unique-announcement-bar {\n                  width: 100%;\n                  background: #E97F3C;\n                  padding: 15px 0;\n                  overflow: hidden;\n                  white-space: nowrap;\n                  position: relative;\n                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);\n              }\n              .unique-announcement-wrapper {\n                  display: flex;\n                  animation: unique-scroll-text 20s linear infinite;\n              }\n              .unique-announcement-text {\n                  color: #FFFFFF;\n                  font-size: 12px;\n                  font-weight: bold;\n                  margin-right: 25px; \n              }\n              @keyframes unique-scroll-text {\n                  0% {\n                      transform: translateX(0);\n                  }\n                  100% {\n                      transform: translateX(-100%);\n                  }\n              }\n    </style>\n  </head>\n  <body>\n    <div class=\"unique-announcement-bar\">\n      <div class=\"unique-announcement-wrapper\">\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n        <div class=\"unique-announcement-text\">🚚 FREE EXPRESS DELIVERY</div>\n        <div class=\"unique-announcement-text\">🎉 FIRST-TIME CUSTOMER? GET 10% OFF – USE CODE: WELCOME10</div>\n      </div>\n    </div>\n  </body>\n</html>",
+        "color_scheme": "scheme-2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_item_XDkanF": {
+          "type": "menu_item",
+          "settings": { "menu_item": "Home", "menu_url": "/" }
+        },
+        "menu_item_Q4Uzg8": {
+          "type": "menu_item",
+          "settings": {
+            "menu_item": "Shop",
+            "menu_url": "shopify://collections/all"
+          }
+        },
+        "menu_item_qKnwPU": {
+          "type": "menu_item",
+          "settings": {
+            "menu_item": "Brand Story",
+            "menu_url": "shopify://pages/about-us"
+          }
+        },
+        "menu_item_czTtUy": {
+          "type": "menu_item",
+          "settings": {
+            "menu_item": "Contact",
+            "menu_url": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "menu_item_XDkanF",
+        "menu_item_Q4Uzg8",
+        "menu_item_qKnwPU",
+        "menu_item_czTtUy"
+      ],
+      "custom_css": ["a {font-size: 20px;}"],
+      "settings": {
+        "logo_position": "middle-center",
+        "menu_source": "custom_menu",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "none",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "enable_customer_avatar": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": ["custom_liquid_UeHxER", "header"]
+}
