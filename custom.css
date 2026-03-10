@@ -1,0 +1,16 @@
+.header__menu-item span.header__active-menu-item {
+  background: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header__menu-item span{
+  font-family: 'CustomBaloo', sans-serif !important;
+  font-size: 32px;
+}
+
+a {
+  font-size: 32px;
+}
