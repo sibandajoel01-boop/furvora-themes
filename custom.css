@@ -1,16 +1,615 @@
-.header__menu-item span.header__active-menu-item {
-  background: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+/* ============================================================
+   FURVORA PETS — custom.css
+   Professional upgrade: calmer animations, premium feel
+   Instructions: Paste into Online Store > Themes > Edit Code
+   > Assets > custom.css (replace entire file)
+   ============================================================ */
+
+/* ── FONTS ─────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@font-face {
+  font-family: 'CustomBaloo';
+  src: url('https://cdn.shopify.com/s/files/1/0615/0019/4925/files/Baloo2-VariableFont_wght.ttf?v=1740370360') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-.header__menu-item span{
+/* ── DESIGN TOKENS ──────────────────────────────────────────── */
+:root {
+  --furvora-orange:       #E97F3C;
+  --furvora-orange-light: #F4B188;
+  --furvora-orange-dark:  #C4622A;
+  --furvora-teal:         #267A6D;
+  --furvora-teal-dark:    #1d5c52;
+  --furvora-cream:        #FDF8F3;
+  --furvora-warm-white:   #FFFAF6;
+  --furvora-text:         #2A2219;
+  --furvora-text-soft:    #6B5B4E;
+  --furvora-border:       rgba(42, 34, 25, 0.10);
+
+  /* Slower, calmer animation speeds */
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --dur-fast:    180ms;
+  --dur-med:     320ms;
+  --dur-slow:    500ms;
+}
+
+/* ── GLOBAL BODY & BACKGROUND ───────────────────────────────── */
+body {
+  font-family: 'DM Sans', sans-serif !important;
+  background-color: var(--furvora-warm-white) !important;
+  color: var(--furvora-text) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5,
+.h0, .h1, .h2, .h3, .h4, .h5,
+.rich-text__heading,
+.section-heading,
+.page-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  letter-spacing: -0.01em;
+  color: var(--furvora-text) !important;
+}
+
+/* Body copy */
+p, span, li, label, input, textarea, select,
+.field__input, .form__label {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+/* Nav & UI labels stay with Baloo for brand warmth */
+.header__menu-item,
+.list-menu__item,
+.button,
+.badge,
+.announcement-bar__message,
+.cart-count-bubble {
   font-family: 'CustomBaloo', sans-serif !important;
-  font-size: 32px;
 }
 
-a {
-  font-size: 32px;
+/* ── SCROLL ANIMATIONS — CALMED DOWN ────────────────────────── */
+/*
+  The original theme fires slide-in on everything simultaneously.
+  We reduce the Y-travel, slow the timing, and space out delays
+  so elements drift in gently rather than jumping.
+*/
+:root {
+  --duration-extra-long:   500ms;   /* was 600ms */
+  --duration-long:         380ms;   /* was 500ms */
+  --animation-slide-in: slideInCalm var(--duration-extra-long) var(--ease-smooth) forwards;
+  --animation-fade-in:  fadeInCalm var(--duration-extra-long) var(--ease-smooth);
+}
+
+@keyframes slideInCalm {
+  from { transform: translateY(12px); opacity: 0; }   /* was 20px */
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes fadeInCalm {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Stagger cap — don't let animation order get too long */
+.scroll-trigger.animate--slide-in {
+  animation-delay: calc(var(--animation-order, 0) * 55ms); /* was 75ms */
+}
+
+/* Kill the bobbing/floating card animations on product slides */
+.swiper-slide:nth-child(odd),
+.swiper-slide:nth-child(even) {
+  animation: none !important;
+}
+
+/* ── HOVER 3D LIFT — SUBTLER ────────────────────────────────── */
+.animate--hover-3d-lift .card-wrapper:hover .card--card,
+.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__inner {
+  transform: rotate(0.4deg) translateY(-3px) !important; /* was rotate(1deg), no Y */
+  box-shadow:
+    0 8px 24px -4px rgba(0,0,0,0.12),
+    0 2px 8px -2px rgba(0,0,0,0.08) !important;
+  transition:
+    transform var(--dur-med) var(--ease-smooth),
+    box-shadow var(--dur-med) var(--ease-smooth) !important;
+}
+
+/* Vertical lift — keep but soften */
+.animate--hover-vertical-lift .card-wrapper:hover .card--card,
+.animate--hover-vertical-lift .card-wrapper:hover .card--standard .card__inner {
+  transform: translateY(-4px) !important; /* was -0.75rem */
+}
+
+/* Remove the shimmer/sparkle easter-egg on hover — too busy */
+.animate--hover-3d-lift .card-wrapper:hover .card--card:before,
+.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__media:after {
+  display: none !important;
+}
+
+/* ── ANNOUNCEMENT BAR ───────────────────────────────────────── */
+.announcement-bar {
+  background-color: var(--furvora-teal) !important;
+  color: #fff !important;
+}
+.announcement-bar__message,
+.announcement-bar__message * {
+  color: #fff !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────── */
+.header-wrapper {
+  background-color: var(--furvora-warm-white) !important;
+  border-bottom: 1px solid var(--furvora-border) !important;
+  backdrop-filter: none;
+}
+
+.header__heading-link .h2 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2.2rem;
+  color: var(--furvora-text) !important;
+}
+
+.header__menu-item {
+  color: var(--furvora-text-soft) !important;
+  font-size: 1.4rem;
+  letter-spacing: 0.03em;
+  transition: color var(--dur-fast) ease;
+}
+
+.header__menu-item:hover {
+  color: var(--furvora-orange) !important;
+}
+
+.header__active-menu-item {
+  color: var(--furvora-orange) !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Cart icon bubble */
+.cart-count-bubble {
+  background-color: var(--furvora-orange) !important;
+  color: #fff !important;
+}
+
+/* ── HERO VIDEO SECTION ─────────────────────────────────────── */
+.hero-video-container {
+  height: 70vh !important;
+  min-height: 480px;
+}
+
+@media (max-width: 768px) {
+  .hero-video-container { height: 55vh !important; }
+}
+
+/* Overlay — slightly lighter so video is more visible */
+.hero-video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25) 0%,
+    rgba(0,0,0,0.50) 60%,
+    rgba(0,0,0,0.65) 100%
+  ) !important;
+}
+
+/* Hero typography */
+.hero-text h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2.8rem, 6vw, 5.2rem) !important;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.hero-text p {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: clamp(1.4rem, 2vw, 1.8rem) !important;
+  font-weight: 300;
+  opacity: 0.92;
+  max-width: 560px;
+}
+
+/* Hero CTA button */
+.hero-button {
+  background-color: var(--furvora-orange) !important;
+  color: #fff !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  padding: 14px 32px !important;
+  border-radius: 50px !important;
+  letter-spacing: 0.02em;
+  text-transform: none !important;
+  transition:
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease !important;
+  box-shadow: 0 4px 16px rgba(233, 127, 60, 0.35) !important;
+}
+
+.hero-button:hover {
+  background-color: var(--furvora-orange-dark) !important;
+  transform: translateY(-2px) !important; /* was scale(1.05) — calmer */
+  box-shadow: 0 8px 24px rgba(233, 127, 60, 0.45) !important;
+}
+
+/* ── SECTION HEADINGS ───────────────────────────────────────── */
+.containerv8 .header-text,
+.why-choose-title,
+.unique-announcement-text-v1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
+  color: var(--furvora-text) !important;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ── BUTTONS — GLOBAL ───────────────────────────────────────── */
+.button,
+.shopify-challenge__button,
+.customer button {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 50px !important;
+  transition:
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease,
+    box-shadow var(--dur-fast) ease !important;
+}
+
+/* Primary button */
+.button--primary,
+.button:not(.button--secondary):not(.button--tertiary) {
+  background-color: var(--furvora-teal) !important;
+  color: #fff !important;
+}
+
+.button--primary:hover,
+.button:not(.button--secondary):not(.button--tertiary):hover {
+  background-color: var(--furvora-teal-dark) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(38, 122, 109, 0.3) !important;
+}
+
+/* Remove the over-eager button scale */
+.animate--hover-3d-lift .button:not(.button--tertiary):not([disabled]):hover,
+.animate--hover-vertical-lift .button:not(.button--tertiary):not([disabled]):hover {
+  transform: translateY(-2px) !important;
+}
+
+/* ── ADD TO CART BUTTON ─────────────────────────────────────── */
+.product-form .quick-add__submit,
+.product-form .product-form__submit {
+  background-color: var(--furvora-teal) !important;
+  color: #fff !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.5rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 50px !important;
+  padding: 14px 28px !important;
+  transition:
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease !important;
+}
+
+.product-form .quick-add__submit:hover,
+.product-form .product-form__submit:hover {
+  background-color: var(--furvora-orange) !important;
+  transform: translateY(-2px) !important; /* was scale(1.05) */
+}
+
+/* ── PRODUCT CARDS ──────────────────────────────────────────── */
+.card--product {
+  border-radius: 12px !important;
+  overflow: hidden;
+  border: 1px solid var(--furvora-border) !important;
+  background: #fff;
+  transition:
+    box-shadow var(--dur-med) ease,
+    transform var(--dur-med) ease !important;
+}
+
+.card--product:hover {
+  box-shadow: 0 8px 28px rgba(42, 34, 25, 0.10) !important;
+  transform: translateY(-3px) !important;
+}
+
+.card__heading a {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+  color: var(--furvora-text) !important;
+  font-size: 1.5rem;
+}
+
+.price-item {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+  color: var(--furvora-teal) !important;
+}
+
+.price-item--sale {
+  color: var(--furvora-orange) !important;
+}
+
+/* Quick add button on cards */
+.quick-add__submit {
+  border-radius: 50px !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* ── COLLECTION BANNER ──────────────────────────────────────── */
+.collection__title {
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* ── SECTION DIVIDERS (wave) ────────────────────────────────── */
+/* Keep waves but ensure they don't animate/pulse */
+.section-divider svg,
+.section-divider path {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* ── REVIEWS SWIPER — CALM ──────────────────────────────────── */
+.swiper-slide {
+  background: #fff !important;
+  border: 1px solid var(--furvora-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px rgba(42, 34, 25, 0.07) !important;
+  /* Remove bobbing animation (already above, belt & suspenders) */
+  animation: none !important;
+  transform: none !important;
+}
+
+.swiper-slide .description {
+  font-family: 'DM Sans', sans-serif !important;
+  color: var(--furvora-text-soft) !important;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.swiper-slide .name {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+  color: var(--furvora-text) !important;
+}
+
+.swiper-slide .rating {
+  color: #F59E0B !important; /* warm gold stars */
+  font-size: 1.8rem;
+}
+
+/* ── FEATURE TABS (golden-capsule-three-col) ────────────────── */
+.containerv8 {
+  background: var(--furvora-cream) !important;
+}
+
+.golden-capsule-three-col .items {
+  transition: background-color var(--dur-fast) ease !important;
+}
+
+.golden-capsule-three-col .items.active,
+.golden-capsule-three-col .items:hover {
+  background-color: var(--furvora-orange-light) !important;
+  border-radius: 8px;
+}
+
+/* ── NEWSLETTER SECTION ─────────────────────────────────────── */
+.newsletter .newsletter__subheading,
+.newsletter p {
+  font-family: 'DM Sans', sans-serif !important;
+  color: var(--furvora-text-soft) !important;
+}
+
+.newsletter .newsletter__title,
+.newsletter h1,
+.newsletter h2 {
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--furvora-border);
+}
+
+.footer__heading {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.6rem !important;
+}
+
+.footer a,
+.footer__content-top a {
+  font-family: 'DM Sans', sans-serif !important;
+  color: var(--furvora-text-soft) !important;
+  transition: color var(--dur-fast) ease;
+}
+
+.footer a:hover,
+.footer__content-top a:hover {
+  color: var(--furvora-orange) !important;
+}
+
+/* ── CART DRAWER ────────────────────────────────────────────── */
+.cart-drawer__heading {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.cart-item__name {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+}
+
+/* ── PREDICTIVE SEARCH ──────────────────────────────────────── */
+.predictive-search__item-heading {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+/* ── BADGES ─────────────────────────────────────────────────── */
+.badge {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+  border-radius: 50px !important;
+  letter-spacing: 0.04em;
+}
+
+/* ── PAGE CONTENT (policy pages etc.) ──────────────────────── */
+.main-page-title,
+.page__title {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.rte p, .rte li {
+  font-family: 'DM Sans', sans-serif !important;
+  line-height: 1.75;
+  color: var(--furvora-text-soft) !important;
+}
+
+/* ── COLLAPSIBLE FAQ ────────────────────────────────────────── */
+.collapsible-content__heading {
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 600;
+}
+
+/* ── FORM INPUTS ────────────────────────────────────────────── */
+.field__input,
+.field__label,
+.select__select {
+  font-family: 'DM Sans', sans-serif !important;
+  border-radius: 8px !important;
+}
+
+.field__input:focus {
+  border-color: var(--furvora-teal) !important;
+  box-shadow: 0 0 0 3px rgba(38, 122, 109, 0.15) !important;
+}
+
+/* ── MOBILE PRODUCT FORM ────────────────────────────────────── */
+@media (max-width: 767px) {
+  .product-form .product-form__submit {
+    font-size: 1.5rem !important;
+    padding: 14px 20px !important;
+    margin-left: 0 !important;
+    width: 100%;
+  }
+}
+
+/* ── AMBIENT IMAGE ANIMATION — DISABLE ──────────────────────── */
+/*
+  The .animate--ambient rotates background images endlessly.
+  This is one of the biggest "too animated" offenders — kill it.
+*/
+.animate--ambient > img,
+.animate--ambient > svg {
+  animation: none !important;
+  transform: scale(1.05) !important; /* slight crop to hide edges */
+}
+
+/* ── ACCESSIBILITY: respect prefers-reduced-motion ──────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── SUBTLE PAGE TRANSITIONS ────────────────────────────────── */
+#MainContent {
+  animation: pageFadeIn 300ms ease forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0.7; }
+  to   { opacity: 1; }
+}
+
+/* ── PREMIUM NAVBAR — TRANSPARENT → SOLID ON SCROLL ─────────── */
+
+/* Make header group sit above everything */
+.shopify-section-group-header-group,
+.section-header.shopify-section-group-header-group {
+  z-index: 100 !important;
+}
+
+/* Remove the bounce/slide animation on hide/show */
+.section-header.animate {
+  transition: background-color 300ms ease,
+              box-shadow 300ms ease,
+              top 0ms !important; /* no sliding animation */
+}
+
+/* Base header — transparent by default */
+.header-wrapper {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  transition: background-color 300ms ease,
+              box-shadow 300ms ease !important;
+}
+
+/* When page is scrolled — Shopify adds .scrolled or we use JS below */
+.header-wrapper--scrolled {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 1px 24px rgba(42, 34, 25, 0.08) !important;
+  border-bottom: 1px solid var(--furvora-border) !important;
+}
+
+/* Logo and nav links — white on transparent, dark on scrolled */
+.header-wrapper:not(.header-wrapper--scrolled) .header__heading-link .h2,
+.header-wrapper:not(.header-wrapper--scrolled) .header__menu-item,
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon {
+  color: #fff !important;
+}
+
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg path,
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Once scrolled — brand colors */
+.header-wrapper--scrolled .header__heading-link .h2 {
+  color: var(--furvora-text) !important;
+}
+
+.header-wrapper--scrolled .header__menu-item {
+  color: var(--furvora-text-soft) !important;
+}
+
+.header-wrapper--scrolled .header__menu-item:hover {
+  color: var(--furvora-orange) !important;
+}
+
+/* Keep sticky — no jumping */
+.shopify-section-header-sticky {
+  position: sticky !important;
+  top: 0 !important;
+}
+
+/* Kill the hide-on-scroll behaviour — keep it always visible */
+.shopify-section-header-hidden {
+  top: 0 !important;
+}
+
+/* Slim elegant height */
+.header {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* Announcement bar — stays teal, no transparency */
+.announcement-bar-section {
+  position: relative;
+  z-index: 101 !important;
 }
