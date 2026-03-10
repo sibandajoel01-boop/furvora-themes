@@ -533,62 +533,43 @@ p, span, li, label, input, textarea, select,
   to   { opacity: 1; }
 }
 
-/* ── PREMIUM NAVBAR — TRANSPARENT → SOLID ON SCROLL ─────────── */
+/* ── PREMIUM NAVBAR — ALWAYS SOLID WHITE ────────────────────── */
 
-/* Make header group sit above everything */
 .shopify-section-group-header-group,
 .section-header.shopify-section-group-header-group {
   z-index: 100 !important;
 }
 
-/* Remove the bounce/slide animation on hide/show */
+/* No animation */
 .section-header.animate {
-  transition: background-color 300ms ease,
-              box-shadow 300ms ease,
-              top 0ms !important; /* no sliding animation */
+  transition: none !important;
 }
 
-/* Base header — transparent by default */
+/* Always white, always visible */
 .header-wrapper {
-  background-color: transparent !important;
-  border-bottom: none !important;
-  transition: background-color 300ms ease,
-              box-shadow 300ms ease !important;
-}
-
-/* When page is scrolled — Shopify adds .scrolled or we use JS below */
-.header-wrapper--scrolled {
-  background-color: rgba(255, 255, 255, 0.97) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  box-shadow: 0 1px 24px rgba(42, 34, 25, 0.08) !important;
+  background-color: #fff !important;
   border-bottom: 1px solid var(--furvora-border) !important;
+  box-shadow: 0 1px 16px rgba(42, 34, 25, 0.06) !important;
 }
 
-/* Logo and nav links — white on transparent, dark on scrolled */
-.header-wrapper:not(.header-wrapper--scrolled) .header__heading-link .h2,
-.header-wrapper:not(.header-wrapper--scrolled) .header__menu-item,
-.header-wrapper:not(.header-wrapper--scrolled) .header__icon {
-  color: #fff !important;
-}
-
-.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg path,
-.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg {
-  fill: #fff !important;
-  stroke: #fff !important;
-}
-
-/* Once scrolled — brand colors */
-.header-wrapper--scrolled .header__heading-link .h2 {
+/* Nav links always dark */
+.header__heading-link .h2 {
   color: var(--furvora-text) !important;
 }
 
-.header-wrapper--scrolled .header__menu-item {
+.header__menu-item,
+.header__menu-item span {
   color: var(--furvora-text-soft) !important;
 }
 
-.header-wrapper--scrolled .header__menu-item:hover {
+.header__menu-item:hover,
+.header__menu-item:hover span {
   color: var(--furvora-orange) !important;
+}
+
+.header__icon svg {
+  fill: var(--furvora-text) !important;
+  stroke: var(--furvora-text) !important;
 }
 
 /* Keep sticky — no jumping */
@@ -597,7 +578,7 @@ p, span, li, label, input, textarea, select,
   top: 0 !important;
 }
 
-/* Kill the hide-on-scroll behaviour — keep it always visible */
+/* Kill hide-on-scroll — always visible */
 .shopify-section-header-hidden {
   top: 0 !important;
 }
@@ -608,10 +589,9 @@ p, span, li, label, input, textarea, select,
   padding-bottom: 14px !important;
 }
 
-/* Announcement bar — stays teal, no transparency */
+/* Hide announcement bar completely */
 .announcement-bar-section {
-  position: relative;
-  z-index: 101 !important;
+  display: none !important;
 }
 
 /* ── HOMEPAGE CLEANUP ───────────────────────────────────────── */
