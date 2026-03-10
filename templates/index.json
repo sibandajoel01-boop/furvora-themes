@@ -123,38 +123,6 @@
         "padding_bottom": 40
       }
     },
-    "rich_text_4R8LmL": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_N449p8": {
-          "type": "heading",
-          "settings": {
-            "heading": "As Seen on TikTok",
-            "heading_size": "h0"
-          }
-        }
-      },
-      "block_order": [
-        "heading_N449p8"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
-    },
-    "custom_liquid_ptFRjF": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>TikTok Video Viewer</title>\n  <style>\n    .slider-containerv8 {\n      position: relative;\n      width: 100%;\n      overflow-x: scroll;\n      display: flex;\n      align-items: center;\n      scroll-snap-type: x mandatory;\n      max-width: 1200px;\n      margin: 0 auto;\n      padding: 0 10px;\n    }\n    .sliderv8 {\n      display: flex;\n      gap: 10px;\n      scroll-snap-type: x mandatory;\n    }\n    .slidev8 {\n      flex: 0 0 60%;\n      max-width: 360px;\n      scroll-snap-align: center;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      position: relative;\n    }\n    @media screen and (min-width: 769px) {\n      .slidev8 {\n        flex: 0 0 50%;\n        max-width: 260px;\n      }\n    }\n    .tiktok-videov8 {\n      width: 100%;\n      aspect-ratio: 9/16;\n      border-radius: 10px;\n      display: block;\n    }\n    .play-buttonv8,\n    .pause-buttonv8 {\n      position: absolute;\n      width: 50px;\n      height: 50px;\n      background: rgba(0, 0, 0, 0.6);\n      color: #fff;\n      border-radius: 50%;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      font-size: 20px;\n      cursor: pointer;\n      z-index: 10;\n    }\n    .play-buttonv8 { margin-left: 2px; }\n    .pause-buttonv8 {\n      display: none;\n      opacity: 1;\n      transition: opacity 0.5s ease;\n    }\n    .pause-buttonv8.hiddenv8 { opacity: 0; }\n    .slider-containerv8::-webkit-scrollbar { height: 10px; }\n    .slider-containerv8::-webkit-scrollbar-thumb {\n      background: #aaa;\n      border-radius: 10px;\n    }\n    .slider-containerv8::-webkit-scrollbar-track { background: #ddd; }\n    .with-borderv8 {\n      padding: 4px;\n      border-radius: 10px;\n      background: linear-gradient(45deg, #E97F3C, #FFC75F);\n    }\n  </style>\n  <script>\n    document.addEventListener(\"DOMContentLoaded\", () => {\n      const slides = document.querySelectorAll(\".slidev8\");\n      slides.forEach(slide => {\n        const playButton = slide.querySelector(\".play-buttonv8\");\n        const pauseButton = slide.querySelector(\".pause-buttonv8\");\n        const video = slide.querySelector(\"video\");\n        let hidePauseButtonTimeout;\n        const showPauseButton = () => {\n          pauseButton.classList.remove(\"hiddenv8\");\n          clearTimeout(hidePauseButtonTimeout);\n          hidePauseButtonTimeout = setTimeout(() => {\n            pauseButton.classList.add(\"hiddenv8\");\n          }, 1000);\n        };\n        playButton.addEventListener(\"click\", () => {\n          document.querySelectorAll(\"video\").forEach(v => {\n            if (v !== video) {\n              v.pause();\n            }\n          });\n          video.play();\n          playButton.style.display = \"none\";\n          pauseButton.style.display = \"flex\";\n          showPauseButton();\n        });\n        pauseButton.addEventListener(\"click\", () => {\n          video.pause();\n          playButton.style.display = \"flex\";\n          pauseButton.style.display = \"none\";\n        });\n        video.addEventListener(\"mousemove\", showPauseButton);\n        video.addEventListener(\"click\", showPauseButton);\n        video.addEventListener(\"play\", showPauseButton);\n      });\n    });\n  </script>\n</head>\n\n<body>\n  <div class=\"slider-containerv8\">\n    <div class=\"sliderv8\">\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/54ddaffaaf5b4c9b9b9f25af24a7255b.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/136c3b3d52eb49ad80673f3ec5e297ce.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/2b17e288d1b846858933f463fa4e8f88.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/226fc4a6fd91415a80aabc08953acf3f.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/00a63a136e704839901253a8139ba8f3.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n      <div class=\"slidev8\">\n        <div class=\"with-borderv8\">\n          <video class=\"tiktok-videov8\" muted loop>\n            <source src=\"https://cdn.shopify.com/videos/c/o/v/e3ecb089b8c14fe09bcbfa360815fcc4.mp4\" type=\"video/mp4\">\n          </video>\n        </div>\n        <div class=\"pause-buttonv8 hiddenv8\">\u275a\u275a</div>\n        <div class=\"play-buttonv8\">\u25b7</div>\n      </div>\n    </div>\n  </div>\n</body>\n\n</html>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
     "rich_text_fTmy7t": {
       "type": "rich-text",
       "blocks": {
@@ -239,8 +207,6 @@
     "custom_liquid_gQ9dxx",
     "featured_collection1",
     "multicolumn_exkm4E",
-    "rich_text_4R8LmL",
-    "custom_liquid_ptFRjF",
     "rich_text_fTmy7t",
     "custom_liquid_JpTVmw",
     "newsletter_EcE7wE",
