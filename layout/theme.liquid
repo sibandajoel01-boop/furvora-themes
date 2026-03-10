@@ -255,14 +255,10 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_body_font.system? -%}
-      {% comment %}theme-check-disable AssetPreload{% endcomment %}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-      {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
-      {% comment %}theme-check-disable AssetPreload{% endcomment %}
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-      {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
 
     {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
@@ -271,12 +267,7 @@
     {%- endif -%}
 
     {%- if settings.predictive_search_enabled -%}
-      <link
-        rel="stylesheet"
-        href="{{ 'component-predictive-search.css' | asset_url }}"
-        media="print"
-        onload="this.media='all'"
-      >
+      <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
     {%- endif -%}
 
     <script>
@@ -284,30 +275,19 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    
-     {% if template contains 'product' -%}
-        <style>
-          @media screen and (min-width: 767px) {
-            .product-form__input.product-form__quantity {
-            float: left !important;
-            margin-right: 2rem !important;
-          }
-          .product__info-container .product-form {
-            margin: 3.6rem 0 !important;
-          }
-          product-form.product-form {
-            display: flow-root !important;
-          }
+
+    {% if template contains 'product' -%}
+      <style>
+        @media screen and (min-width: 767px) {
+          .product-form__input.product-form__quantity { float: left !important; margin-right: 2rem !important; }
+          .product__info-container .product-form { margin: 3.6rem 0 !important; }
+          product-form.product-form { display: flow-root !important; }
           .product-form__submit.button.button--full-width.button--primary {
-            flex: 1;
-            padding: 16px 74px; /* Adjust padding for smaller button */
-            margin-top: 18px;
-            font-size: 16px; /* Adjust font size */
-            width: auto; /* Optional: Set width to auto for a more compact button */
+            flex: 1; padding: 16px 74px; margin-top: 18px; font-size: 16px; width: auto;
           }
         }
-        </style>
-      {% endif %}
+      </style>
+    {% endif %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -341,19 +321,16 @@
         cart_url: '{{ routes.cart_url }}',
         predictive_search_url: '{{ routes.predictive_search_url }}',
       };
-
       window.cartStrings = {
         error: `{{ 'sections.cart.cart_error' | t }}`,
         quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`,
       };
-
       window.variantStrings = {
         addToCart: `{{ 'products.product.add_to_cart' | t }}`,
         soldOut: `{{ 'products.product.sold_out' | t }}`,
         unavailable: `{{ 'products.product.unavailable' | t }}`,
         unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
       };
-
       window.quickOrderListStrings = {
         itemsAdded: `{{ 'sections.quick_order_list.items_added.other' | t: quantity: '[quantity]' }}`,
         itemAdded: `{{ 'sections.quick_order_list.items_added.one' | t: quantity: '[quantity]' }}`,
@@ -365,7 +342,6 @@
         max_error: `{{- 'sections.quick_order_list.max_error' | t: max: '[max]' }}`,
         step_error: `{{- 'sections.quick_order_list.step_error' | t: step: '[step]' }}`,
       };
-
       window.accessibilityStrings = {
         imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
         shareSuccess: `{{ 'general.share.success_message' | t }}`,
@@ -381,58 +357,7 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    <style>
-/* 🛒 Shopify Add to Cart Button Styles */
+    {{ 'navbar-scroll.js' | asset_url | script_tag }}
 
-/* Load Custom Font */
-@font-face {
-    font-family: 'CustomBaloo';
-    src: url('https://cdn.shopify.com/s/files/1/0615/0019/4925/files/Baloo2-VariableFont_wght.ttf?v=1740370360') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap; /* Ensures smooth loading */
-}
-
-.product-form .quick-add__submit,
-.product-form .product-form__submit {
-    background-color: #267A6D; /* Keep original background */
-    color: #FFFFFF; /* Updated text color */
-    font-family: 'CustomBaloo', sans-serif !important; /* Force custom font */
-    font-weight: 700; /* Bold for emphasis */
-    font-size: 24px; /* Readable size */
-    text-transform: uppercase; /* Uppercase for readability */
-    border: none; /* Removes default border */
-    border-radius: 6px; /* Smooth rounded edges */
-    padding: 14px 20px; /* Comfortable click area */
-    cursor: pointer; /* Pointer cursor for clickability */
-    width: 100%; /* Full-width button */
-    display: flex; /* Centers text inside button */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    text-align: center; /* Ensure text is centered */
-    margin: 10px auto; /* Space around button */
-    transition: background-color 0.3s ease-in-out, transform 0.1s ease-in-out;
-}
-
-/* 🖱️ Hover Effect */
-.product-form .quick-add__submit:hover,
-.product-form .product-form__submit:hover {
-    background-color: #E65C00; /* Slightly darker orange */
-    transform: scale(1.05); /* Slight pop effect */
-}
-
-/* 📱 Mobile Optimization */
-@media (max-width: 768px) {
-    .product-form .quick-add__submit,
-    .product-form .product-form__submit {
-        font-size: 24px; /* Bigger font for tap-friendly UX */
-        font-family: 'CustomBaloo', sans-serif !important; /* Force custom font */
-        font-weight: 700; /* Bold for emphasis */
-        padding: 12px 18px; /* Adjust padding */
-        max-width: 100%; /* Full width on mobile */
-        width: 100%;
-        margin-left: 20px; /* ✅ Move button slightly to the right */
-    }
-}
-</style>
-
+  </body>
+</html>

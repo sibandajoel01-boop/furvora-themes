@@ -532,3 +532,84 @@ p, span, li, label, input, textarea, select,
   from { opacity: 0.7; }
   to   { opacity: 1; }
 }
+
+/* ── PREMIUM NAVBAR — TRANSPARENT → SOLID ON SCROLL ─────────── */
+
+/* Make header group sit above everything */
+.shopify-section-group-header-group,
+.section-header.shopify-section-group-header-group {
+  z-index: 100 !important;
+}
+
+/* Remove the bounce/slide animation on hide/show */
+.section-header.animate {
+  transition: background-color 300ms ease,
+              box-shadow 300ms ease,
+              top 0ms !important; /* no sliding animation */
+}
+
+/* Base header — transparent by default */
+.header-wrapper {
+  background-color: transparent !important;
+  border-bottom: none !important;
+  transition: background-color 300ms ease,
+              box-shadow 300ms ease !important;
+}
+
+/* When page is scrolled — Shopify adds .scrolled or we use JS below */
+.header-wrapper--scrolled {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 1px 24px rgba(42, 34, 25, 0.08) !important;
+  border-bottom: 1px solid var(--furvora-border) !important;
+}
+
+/* Logo and nav links — white on transparent, dark on scrolled */
+.header-wrapper:not(.header-wrapper--scrolled) .header__heading-link .h2,
+.header-wrapper:not(.header-wrapper--scrolled) .header__menu-item,
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon {
+  color: #fff !important;
+}
+
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg path,
+.header-wrapper:not(.header-wrapper--scrolled) .header__icon svg {
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Once scrolled — brand colors */
+.header-wrapper--scrolled .header__heading-link .h2 {
+  color: var(--furvora-text) !important;
+}
+
+.header-wrapper--scrolled .header__menu-item {
+  color: var(--furvora-text-soft) !important;
+}
+
+.header-wrapper--scrolled .header__menu-item:hover {
+  color: var(--furvora-orange) !important;
+}
+
+/* Keep sticky — no jumping */
+.shopify-section-header-sticky {
+  position: sticky !important;
+  top: 0 !important;
+}
+
+/* Kill the hide-on-scroll behaviour — keep it always visible */
+.shopify-section-header-hidden {
+  top: 0 !important;
+}
+
+/* Slim elegant height */
+.header {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+/* Announcement bar — stays teal, no transparency */
+.announcement-bar-section {
+  position: relative;
+  z-index: 101 !important;
+}
