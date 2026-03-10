@@ -1,12 +1,10 @@
 /* ============================================================
    FURVORA PETS — custom.css
-   Professional upgrade: calmer animations, premium feel
-   Instructions: Paste into Online Store > Themes > Edit Code
-   > Assets > custom.css (replace entire file)
+   Full premium rebrand — warm, editorial, trustworthy
    ============================================================ */
 
 /* ── FONTS ─────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @font-face {
   font-family: 'CustomBaloo';
@@ -18,28 +16,25 @@
 
 /* ── DESIGN TOKENS ──────────────────────────────────────────── */
 :root {
-  --furvora-orange:       #E97F3C;
-  --furvora-orange-light: #F4B188;
-  --furvora-orange-dark:  #C4622A;
-  --furvora-teal:         #267A6D;
-  --furvora-teal-dark:    #1d5c52;
-  --furvora-cream:        #FDF8F3;
-  --furvora-warm-white:   #FFFAF6;
-  --furvora-text:         #2A2219;
-  --furvora-text-soft:    #6B5B4E;
-  --furvora-border:       rgba(42, 34, 25, 0.10);
-
-  /* Slower, calmer animation speeds */
+  --furvora-cream:        #F6F2EA;
+  --furvora-sand:         #E8DDCF;
+  --furvora-green:        #2F5D50;
+  --furvora-green-dark:   #234840;
+  --furvora-terra:        #D47A54;
+  --furvora-terra-light:  #e8967a;
+  --furvora-text:         #2B2B2B;
+  --furvora-text-soft:    #6B6259;
+  --furvora-border:       rgba(43, 43, 43, 0.10);
+  --furvora-white:        #FFFFFF;
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --dur-fast:    180ms;
-  --dur-med:     320ms;
-  --dur-slow:    500ms;
+  --dur-fast: 180ms;
+  --dur-med: 300ms;
 }
 
-/* ── GLOBAL BODY & BACKGROUND ───────────────────────────────── */
+/* ── GLOBAL ─────────────────────────────────────────────────── */
 body {
-  font-family: 'DM Sans', sans-serif !important;
-  background-color: var(--furvora-warm-white) !important;
+  font-family: 'Inter', sans-serif !important;
+  background-color: var(--furvora-cream) !important;
   color: var(--furvora-text) !important;
   -webkit-font-smoothing: antialiased;
 }
@@ -47,45 +42,183 @@ body {
 /* ── TYPOGRAPHY ─────────────────────────────────────────────── */
 h1, h2, h3, h4, h5,
 .h0, .h1, .h2, .h3, .h4, .h5,
-.rich-text__heading,
-.section-heading,
-.page-title {
+.rich-text__heading, .section-heading, .page-title {
   font-family: 'Playfair Display', Georgia, serif !important;
   letter-spacing: -0.01em;
   color: var(--furvora-text) !important;
+  line-height: 1.2;
 }
 
-/* Body copy */
 p, span, li, label, input, textarea, select,
 .field__input, .form__label {
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
-/* Nav & UI labels stay with Baloo for brand warmth */
+/* ── ANNOUNCEMENT BAR — HIDDEN ──────────────────────────────── */
+.announcement-bar-section {
+  display: none !important;
+}
+
+/* ── NAVBAR ─────────────────────────────────────────────────── */
+.shopify-section-group-header-group,
+.section-header.shopify-section-group-header-group {
+  z-index: 100 !important;
+}
+
+.section-header.animate {
+  transition: none !important;
+}
+
+.header-wrapper {
+  background-color: var(--furvora-white) !important;
+  border-bottom: 1px solid var(--furvora-border) !important;
+  box-shadow: 0 1px 20px rgba(43, 43, 43, 0.05) !important;
+}
+
+.header__heading-link .h2,
+.header__heading-link span {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 2rem !important;
+  color: var(--furvora-text) !important;
+  letter-spacing: 0.02em;
+}
+
 .header__menu-item,
-.list-menu__item,
-.button,
-.badge,
-.announcement-bar__message,
-.cart-count-bubble {
-  font-family: 'CustomBaloo', sans-serif !important;
+.header__menu-item span {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  color: var(--furvora-text-soft) !important;
+  letter-spacing: 0.02em;
+  transition: color var(--dur-fast) ease;
 }
 
-/* ── SCROLL ANIMATIONS — CALMED DOWN ────────────────────────── */
-/*
-  The original theme fires slide-in on everything simultaneously.
-  We reduce the Y-travel, slow the timing, and space out delays
-  so elements drift in gently rather than jumping.
-*/
+.header__menu-item:hover,
+.header__menu-item:hover span {
+  color: var(--furvora-green) !important;
+}
+
+.header__active-menu-item {
+  color: var(--furvora-green) !important;
+}
+
+.header__icon svg {
+  fill: var(--furvora-text) !important;
+  stroke: var(--furvora-text) !important;
+}
+
+.cart-count-bubble {
+  background-color: var(--furvora-green) !important;
+  color: #fff !important;
+}
+
+.shopify-section-header-sticky {
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.shopify-section-header-hidden {
+  top: 0 !important;
+}
+
+.header {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+/* ── BUTTONS ────────────────────────────────────────────────── */
+.button, .shopify-challenge__button, .customer button {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 8px !important;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease !important;
+}
+
+.button--primary,
+.button:not(.button--secondary):not(.button--tertiary) {
+  background-color: var(--furvora-green) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.button--primary:hover,
+.button:not(.button--secondary):not(.button--tertiary):hover {
+  background-color: var(--furvora-green-dark) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(47, 93, 80, 0.25) !important;
+}
+
+.button--secondary {
+  border: 2px solid var(--furvora-green) !important;
+  color: var(--furvora-green) !important;
+  background: transparent !important;
+}
+
+.button--secondary:hover {
+  background-color: var(--furvora-green) !important;
+  color: #fff !important;
+}
+
+/* ── HERO SECTION ───────────────────────────────────────────── */
+.hero-video-container {
+  height: 75vh !important;
+  min-height: 520px;
+}
+
+@media (max-width: 768px) {
+  .hero-video-container { height: 55vh !important; }
+}
+
+.hero-video-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.65) 100%) !important;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(3rem, 6vw, 5.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.hero-text p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: clamp(1.4rem, 2vw, 1.8rem) !important;
+  font-weight: 300 !important;
+  opacity: 0.92;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+.hero-button {
+  background-color: var(--furvora-green) !important;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  padding: 14px 36px !important;
+  border-radius: 8px !important;
+  letter-spacing: 0.04em !important;
+  box-shadow: 0 4px 20px rgba(47, 93, 80, 0.35) !important;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) ease !important;
+}
+
+.hero-button:hover {
+  background-color: var(--furvora-green-dark) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── ANIMATIONS — CALMED ────────────────────────────────────── */
 :root {
-  --duration-extra-long:   500ms;   /* was 600ms */
-  --duration-long:         380ms;   /* was 500ms */
+  --duration-extra-long: 500ms;
+  --duration-long: 380ms;
   --animation-slide-in: slideInCalm var(--duration-extra-long) var(--ease-smooth) forwards;
-  --animation-fade-in:  fadeInCalm var(--duration-extra-long) var(--ease-smooth);
+  --animation-fade-in: fadeInCalm var(--duration-extra-long) var(--ease-smooth);
 }
 
 @keyframes slideInCalm {
-  from { transform: translateY(12px); opacity: 0; }   /* was 20px */
+  from { transform: translateY(10px); opacity: 0; }
   to   { transform: translateY(0);    opacity: 1; }
 }
 
@@ -94,428 +227,306 @@ p, span, li, label, input, textarea, select,
   to   { opacity: 1; }
 }
 
-/* Stagger cap — don't let animation order get too long */
 .scroll-trigger.animate--slide-in {
-  animation-delay: calc(var(--animation-order, 0) * 55ms); /* was 75ms */
+  animation-delay: calc(var(--animation-order, 0) * 50ms);
 }
 
-/* Kill the bobbing/floating card animations on product slides */
 .swiper-slide:nth-child(odd),
-.swiper-slide:nth-child(even) {
+.swiper-slide:nth-child(even),
+.animate--ambient > img,
+.animate--ambient > svg {
   animation: none !important;
 }
 
-/* ── HOVER 3D LIFT — SUBTLER ────────────────────────────────── */
-.animate--hover-3d-lift .card-wrapper:hover .card--card,
-.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__inner {
-  transform: rotate(0.4deg) translateY(-3px) !important; /* was rotate(1deg), no Y */
-  box-shadow:
-    0 8px 24px -4px rgba(0,0,0,0.12),
-    0 2px 8px -2px rgba(0,0,0,0.08) !important;
-  transition:
-    transform var(--dur-med) var(--ease-smooth),
-    box-shadow var(--dur-med) var(--ease-smooth) !important;
-}
-
-/* Vertical lift — keep but soften */
-.animate--hover-vertical-lift .card-wrapper:hover .card--card,
-.animate--hover-vertical-lift .card-wrapper:hover .card--standard .card__inner {
-  transform: translateY(-4px) !important; /* was -0.75rem */
-}
-
-/* Remove the shimmer/sparkle easter-egg on hover — too busy */
-.animate--hover-3d-lift .card-wrapper:hover .card--card:before,
-.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__media:after {
-  display: none !important;
-}
-
-/* ── ANNOUNCEMENT BAR ───────────────────────────────────────── */
-.announcement-bar {
-  background-color: var(--furvora-teal) !important;
-  color: #fff !important;
-}
-.announcement-bar__message,
-.announcement-bar__message * {
-  color: #fff !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 1.3rem;
-  letter-spacing: 0.08em;
-  font-weight: 400;
-}
-
-/* ── HEADER ─────────────────────────────────────────────────── */
-.header-wrapper {
-  background-color: var(--furvora-warm-white) !important;
-  border-bottom: 1px solid var(--furvora-border) !important;
-  backdrop-filter: none;
-}
-
-.header__heading-link .h2 {
-  font-family: 'Playfair Display', serif !important;
-  font-size: 2.2rem;
-  color: var(--furvora-text) !important;
-}
-
-.header__menu-item {
-  color: var(--furvora-text-soft) !important;
-  font-size: 1.4rem;
-  letter-spacing: 0.03em;
-  transition: color var(--dur-fast) ease;
-}
-
-.header__menu-item:hover {
-  color: var(--furvora-orange) !important;
-}
-
-.header__active-menu-item {
-  color: var(--furvora-orange) !important;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-/* Cart icon bubble */
-.cart-count-bubble {
-  background-color: var(--furvora-orange) !important;
-  color: #fff !important;
-}
-
-/* ── HERO VIDEO SECTION ─────────────────────────────────────── */
-.hero-video-container {
-  height: 70vh !important;
-  min-height: 480px;
-}
-
-@media (max-width: 768px) {
-  .hero-video-container { height: 55vh !important; }
-}
-
-/* Overlay — slightly lighter so video is more visible */
-.hero-video-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.25) 0%,
-    rgba(0,0,0,0.50) 60%,
-    rgba(0,0,0,0.65) 100%
-  ) !important;
-}
-
-/* Hero typography */
-.hero-text h1 {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(2.8rem, 6vw, 5.2rem) !important;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.hero-text p {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: clamp(1.4rem, 2vw, 1.8rem) !important;
-  font-weight: 300;
-  opacity: 0.92;
-  max-width: 560px;
-}
-
-/* Hero CTA button */
-.hero-button {
-  background-color: var(--furvora-orange) !important;
-  color: #fff !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 1.5rem !important;
-  padding: 14px 32px !important;
-  border-radius: 50px !important;
-  letter-spacing: 0.02em;
-  text-transform: none !important;
-  transition:
-    background-color var(--dur-fast) ease,
-    transform var(--dur-fast) ease,
-    box-shadow var(--dur-fast) ease !important;
-  box-shadow: 0 4px 16px rgba(233, 127, 60, 0.35) !important;
-}
-
-.hero-button:hover {
-  background-color: var(--furvora-orange-dark) !important;
-  transform: translateY(-2px) !important; /* was scale(1.05) — calmer */
-  box-shadow: 0 8px 24px rgba(233, 127, 60, 0.45) !important;
-}
-
-/* ── SECTION HEADINGS ───────────────────────────────────────── */
-.containerv8 .header-text,
-.why-choose-title,
-.unique-announcement-text-v1 {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(2.2rem, 4vw, 3.2rem) !important;
-  color: var(--furvora-text) !important;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-/* ── BUTTONS — GLOBAL ───────────────────────────────────────── */
-.button,
-.shopify-challenge__button,
-.customer button {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  border-radius: 50px !important;
-  transition:
-    background-color var(--dur-fast) ease,
-    transform var(--dur-fast) ease,
-    box-shadow var(--dur-fast) ease !important;
-}
-
-/* Primary button */
-.button--primary,
-.button:not(.button--secondary):not(.button--tertiary) {
-  background-color: var(--furvora-teal) !important;
-  color: #fff !important;
-}
-
-.button--primary:hover,
-.button:not(.button--secondary):not(.button--tertiary):hover {
-  background-color: var(--furvora-teal-dark) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(38, 122, 109, 0.3) !important;
-}
-
-/* Remove the over-eager button scale */
-.animate--hover-3d-lift .button:not(.button--tertiary):not([disabled]):hover,
-.animate--hover-vertical-lift .button:not(.button--tertiary):not([disabled]):hover {
-  transform: translateY(-2px) !important;
-}
-
-/* ── ADD TO CART BUTTON ─────────────────────────────────────── */
-.product-form .quick-add__submit,
-.product-form .product-form__submit {
-  background-color: var(--furvora-teal) !important;
-  color: #fff !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 1.5rem !important;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-radius: 50px !important;
-  padding: 14px 28px !important;
-  transition:
-    background-color var(--dur-fast) ease,
-    transform var(--dur-fast) ease !important;
-}
-
-.product-form .quick-add__submit:hover,
-.product-form .product-form__submit:hover {
-  background-color: var(--furvora-orange) !important;
-  transform: translateY(-2px) !important; /* was scale(1.05) */
+.animate--ambient > img,
+.animate--ambient > svg {
+  transform: scale(1.05) !important;
 }
 
 /* ── PRODUCT CARDS ──────────────────────────────────────────── */
 .card--product {
   border-radius: 12px !important;
-  overflow: hidden;
+  overflow: hidden !important;
   border: 1px solid var(--furvora-border) !important;
-  background: #fff;
-  transition:
-    box-shadow var(--dur-med) ease,
-    transform var(--dur-med) ease !important;
+  background: var(--furvora-white) !important;
+  transition: box-shadow var(--dur-med) ease, transform var(--dur-med) ease !important;
 }
 
 .card--product:hover {
-  box-shadow: 0 8px 28px rgba(42, 34, 25, 0.10) !important;
+  box-shadow: 0 8px 32px rgba(43, 43, 43, 0.10) !important;
   transform: translateY(-3px) !important;
 }
 
 .card__heading a {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
   color: var(--furvora-text) !important;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
 }
 
 .price-item {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
-  color: var(--furvora-teal) !important;
-}
-
-.price-item--sale {
-  color: var(--furvora-orange) !important;
-}
-
-/* Quick add button on cards */
-.quick-add__submit {
-  border-radius: 50px !important;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   font-weight: 600 !important;
+  color: var(--furvora-green) !important;
 }
 
-/* ── COLLECTION BANNER ──────────────────────────────────────── */
-.collection__title {
+.price-item--sale { color: var(--furvora-terra) !important; }
+.card-wrapper { background: var(--furvora-white) !important; }
+
+/* ── ADD TO CART ────────────────────────────────────────────── */
+.product-form .quick-add__submit,
+.product-form .product-form__submit {
+  background-color: var(--furvora-green) !important;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 8px !important;
+  padding: 14px 28px !important;
+  transition: background-color var(--dur-fast) ease, transform var(--dur-fast) ease !important;
+}
+
+.product-form .quick-add__submit:hover,
+.product-form .product-form__submit:hover {
+  background-color: var(--furvora-green-dark) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── FEATURE TABS ───────────────────────────────────────────── */
+.containerv8, .product_tab_sec {
+  background-color: var(--furvora-white) !important;
+}
+
+.containerv8 .header-text,
+.product_tab_sec .header-text {
   font-family: 'Playfair Display', serif !important;
-}
-
-/* ── SECTION DIVIDERS (wave) ────────────────────────────────── */
-/* Keep waves but ensure they don't animate/pulse */
-.section-divider svg,
-.section-divider path {
-  animation: none !important;
-  transition: none !important;
-}
-
-/* ── REVIEWS SWIPER — CALM ──────────────────────────────────── */
-.swiper-slide {
-  background: #fff !important;
-  border: 1px solid var(--furvora-border) !important;
-  border-radius: 12px !important;
-  box-shadow: 0 2px 12px rgba(42, 34, 25, 0.07) !important;
-  /* Remove bobbing animation (already above, belt & suspenders) */
-  animation: none !important;
-  transform: none !important;
-}
-
-.swiper-slide .description {
-  font-family: 'DM Sans', sans-serif !important;
-  color: var(--furvora-text-soft) !important;
-  font-size: 1.4rem;
-  line-height: 1.6;
-}
-
-.swiper-slide .name {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
   color: var(--furvora-text) !important;
 }
 
-.swiper-slide .rating {
-  color: #F59E0B !important; /* warm gold stars */
-  font-size: 1.8rem;
-}
-
-/* ── FEATURE TABS (golden-capsule-three-col) ────────────────── */
-.containerv8 {
-  background: var(--furvora-cream) !important;
-}
-
-.golden-capsule-three-col .items {
-  transition: background-color var(--dur-fast) ease !important;
+.product_tab_sec p {
+  font-family: 'Inter', sans-serif !important;
+  color: var(--furvora-text-soft) !important;
 }
 
 .golden-capsule-three-col .items.active,
 .golden-capsule-three-col .items:hover {
-  background-color: var(--furvora-orange-light) !important;
-  border-radius: 8px;
+  background-color: var(--furvora-sand) !important;
+  border-radius: 8px !important;
 }
 
-/* ── NEWSLETTER SECTION ─────────────────────────────────────── */
-.newsletter .newsletter__subheading,
+/* ── TRUST / MULTICOLUMN ────────────────────────────────────── */
+.multicolumn { background-color: var(--furvora-sand) !important; }
+
+.multicolumn .title {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2rem, 3vw, 2.8rem) !important;
+}
+
+.multicolumn-card__title {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--furvora-text) !important;
+}
+
+.multicolumn-card p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.3rem !important;
+  color: var(--furvora-text-soft) !important;
+  line-height: 1.6 !important;
+}
+
+/* ── REVIEWS ────────────────────────────────────────────────── */
+#card-container {
+  background-color: var(--furvora-cream) !important;
+  padding: 40px 0 !important;
+}
+
+.swiper-slide {
+  background: var(--furvora-white) !important;
+  border: 1px solid var(--furvora-border) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 2px 16px rgba(43,43,43,0.06) !important;
+  animation: none !important;
+}
+
+.swiper-slide .description {
+  font-family: 'Inter', sans-serif !important;
+  color: var(--furvora-text-soft) !important;
+  font-size: 1.4rem !important;
+  line-height: 1.6 !important;
+}
+
+.swiper-slide .name {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  color: var(--furvora-text) !important;
+}
+
+.swiper-slide .rating { color: #D4A843 !important; }
+
+/* ── NEWSLETTER ─────────────────────────────────────────────── */
+.newsletter { background-color: var(--furvora-white) !important; }
+
+.newsletter .newsletter__heading,
+.newsletter h1, .newsletter h2 {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--furvora-text) !important;
+}
+
 .newsletter p {
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   color: var(--furvora-text-soft) !important;
 }
 
-.newsletter .newsletter__title,
-.newsletter h1,
-.newsletter h2 {
-  font-family: 'Playfair Display', serif !important;
+.newsletter .field__input {
+  border-radius: 8px !important;
+  border: 1px solid var(--furvora-border) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.newsletter .field__input:focus {
+  border-color: var(--furvora-green) !important;
+  box-shadow: 0 0 0 3px rgba(47, 93, 80, 0.12) !important;
 }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
-.footer {
-  border-top: 1px solid var(--furvora-border);
-}
+.footer { background-color: var(--furvora-text) !important; border-top: none !important; }
 
 .footer__heading {
   font-family: 'Playfair Display', serif !important;
   font-size: 1.6rem !important;
+  color: var(--furvora-white) !important;
+  letter-spacing: 0.04em !important;
 }
 
-.footer a,
-.footer__content-top a {
-  font-family: 'DM Sans', sans-serif !important;
+.footer a, .footer__content-top a, .footer__list li a {
+  font-family: 'Inter', sans-serif !important;
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 1.3rem !important;
+  transition: color var(--dur-fast) ease !important;
+}
+
+.footer a:hover, .footer__content-top a:hover {
+  color: var(--furvora-terra-light) !important;
+}
+
+.footer p, .footer__content-top p {
+  font-family: 'Inter', sans-serif !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 1.3rem !important;
+  line-height: 1.7 !important;
+}
+
+.footer__content-bottom {
+  border-top: 1px solid rgba(255,255,255,0.10) !important;
+  color: rgba(255,255,255,0.35) !important;
+}
+
+/* Hide wave dividers */
+.section-divider { display: none !important; }
+
+/* ── COLLECTION / PRODUCT PAGES ─────────────────────────────── */
+.collection__title, .product__title {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--furvora-text) !important;
+}
+
+.collection-hero { background-color: var(--furvora-sand) !important; }
+
+.product__title { font-size: clamp(2rem, 3vw, 3rem) !important; }
+
+.product__description {
+  font-family: 'Inter', sans-serif !important;
   color: var(--furvora-text-soft) !important;
-  transition: color var(--dur-fast) ease;
+  line-height: 1.75 !important;
+  font-size: 1.5rem !important;
 }
 
-.footer a:hover,
-.footer__content-top a:hover {
-  color: var(--furvora-orange) !important;
+.product__price .price-item {
+  font-size: 2.2rem !important;
+  color: var(--furvora-green) !important;
 }
 
-/* ── CART DRAWER ────────────────────────────────────────────── */
-.cart-drawer__heading {
+/* ── PAGE CONTENT ───────────────────────────────────────────── */
+.main-page-title, .page__title {
   font-family: 'Playfair Display', serif !important;
-}
-
-.cart-item__name {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
-}
-
-/* ── PREDICTIVE SEARCH ──────────────────────────────────────── */
-.predictive-search__item-heading {
-  font-family: 'DM Sans', sans-serif !important;
-}
-
-/* ── BADGES ─────────────────────────────────────────────────── */
-.badge {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
-  border-radius: 50px !important;
-  letter-spacing: 0.04em;
-}
-
-/* ── PAGE CONTENT (policy pages etc.) ──────────────────────── */
-.main-page-title,
-.page__title {
-  font-family: 'Playfair Display', serif !important;
+  color: var(--furvora-text) !important;
 }
 
 .rte p, .rte li {
-  font-family: 'DM Sans', sans-serif !important;
-  line-height: 1.75;
+  font-family: 'Inter', sans-serif !important;
+  line-height: 1.75 !important;
   color: var(--furvora-text-soft) !important;
+  font-size: 1.5rem !important;
 }
 
-/* ── COLLAPSIBLE FAQ ────────────────────────────────────────── */
-.collapsible-content__heading {
-  font-family: 'DM Sans', sans-serif !important;
-  font-weight: 600;
+.rte h2, .rte h3 {
+  font-family: 'Playfair Display', serif !important;
+  color: var(--furvora-text) !important;
 }
 
-/* ── FORM INPUTS ────────────────────────────────────────────── */
-.field__input,
-.field__label,
-.select__select {
-  font-family: 'DM Sans', sans-serif !important;
+/* ── FAQ ────────────────────────────────────────────────────── */
+.collapsible-content__heading, details summary {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* ── FORMS ──────────────────────────────────────────────────── */
+.field__input, .field__label, .select__select {
+  font-family: 'Inter', sans-serif !important;
   border-radius: 8px !important;
 }
 
 .field__input:focus {
-  border-color: var(--furvora-teal) !important;
-  box-shadow: 0 0 0 3px rgba(38, 122, 109, 0.15) !important;
+  border-color: var(--furvora-green) !important;
+  box-shadow: 0 0 0 3px rgba(47, 93, 80, 0.12) !important;
 }
 
-/* ── MOBILE PRODUCT FORM ────────────────────────────────────── */
+/* ── CART DRAWER ────────────────────────────────────────────── */
+.cart-drawer { background-color: var(--furvora-cream) !important; }
+.cart-drawer__heading { font-family: 'Playfair Display', serif !important; }
+.cart-item__name { font-family: 'Inter', sans-serif !important; font-weight: 600 !important; }
+
+/* ── BADGES ─────────────────────────────────────────────────── */
+.badge {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── TICKER STRIP ───────────────────────────────────────────── */
+.furvora-ticker-wrap { background-color: #1a1a1a !important; }
+.furvora-ticker-item { font-family: 'Inter', sans-serif !important; color: #f9f5f0 !important; }
+
+/* ── HOVER EFFECTS ──────────────────────────────────────────── */
+.animate--hover-3d-lift .card-wrapper:hover .card--card,
+.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__inner {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(43,43,43,0.10) !important;
+  transition: transform var(--dur-med) ease, box-shadow var(--dur-med) ease !important;
+}
+
+.animate--hover-3d-lift .card-wrapper:hover .card--card:before,
+.animate--hover-3d-lift .card-wrapper:hover .card--standard .card__media:after {
+  display: none !important;
+}
+
+/* ── SECTION SPACING ────────────────────────────────────────── */
+.shopify-section { margin-top: 0 !important; }
+
+/* ── MOBILE ─────────────────────────────────────────────────── */
 @media (max-width: 767px) {
   .product-form .product-form__submit {
     font-size: 1.5rem !important;
     padding: 14px 20px !important;
-    margin-left: 0 !important;
-    width: 100%;
+    width: 100% !important;
   }
 }
 
-/* ── AMBIENT IMAGE ANIMATION — DISABLE ──────────────────────── */
-/*
-  The .animate--ambient rotates background images endlessly.
-  This is one of the biggest "too animated" offenders — kill it.
-*/
-.animate--ambient > img,
-.animate--ambient > svg {
-  animation: none !important;
-  transform: scale(1.05) !important; /* slight crop to hide edges */
-}
-
-/* ── ACCESSIBILITY: respect prefers-reduced-motion ──────────── */
+/* ── ACCESSIBILITY ──────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -523,193 +534,10 @@ p, span, li, label, input, textarea, select,
   }
 }
 
-/* ── SUBTLE PAGE TRANSITIONS ────────────────────────────────── */
-#MainContent {
-  animation: pageFadeIn 300ms ease forwards;
-}
+/* ── PAGE FADE ──────────────────────────────────────────────── */
+#MainContent { animation: pageFadeIn 300ms ease forwards; }
 
 @keyframes pageFadeIn {
-  from { opacity: 0.7; }
+  from { opacity: 0.8; }
   to   { opacity: 1; }
-}
-
-/* ── PREMIUM NAVBAR — ALWAYS SOLID WHITE ────────────────────── */
-
-.shopify-section-group-header-group,
-.section-header.shopify-section-group-header-group {
-  z-index: 100 !important;
-}
-
-/* No animation */
-.section-header.animate {
-  transition: none !important;
-}
-
-/* Always white, always visible */
-.header-wrapper {
-  background-color: #fff !important;
-  border-bottom: 1px solid var(--furvora-border) !important;
-  box-shadow: 0 1px 16px rgba(42, 34, 25, 0.06) !important;
-}
-
-/* Nav links always dark */
-.header__heading-link .h2 {
-  color: var(--furvora-text) !important;
-}
-
-.header__menu-item,
-.header__menu-item span {
-  color: var(--furvora-text-soft) !important;
-}
-
-.header__menu-item:hover,
-.header__menu-item:hover span {
-  color: var(--furvora-orange) !important;
-}
-
-.header__icon svg {
-  fill: var(--furvora-text) !important;
-  stroke: var(--furvora-text) !important;
-}
-
-/* Keep sticky — no jumping */
-.shopify-section-header-sticky {
-  position: sticky !important;
-  top: 0 !important;
-}
-
-/* Kill hide-on-scroll — always visible */
-.shopify-section-header-hidden {
-  top: 0 !important;
-}
-
-/* Slim elegant height */
-.header {
-  padding-top: 14px !important;
-  padding-bottom: 14px !important;
-}
-
-/* Hide announcement bar completely */
-.announcement-bar-section {
-  display: none !important;
-}
-
-/* ── HOMEPAGE CLEANUP ───────────────────────────────────────── */
-
-/* Kill green backgrounds everywhere */
-.unique-announcement-bar-v1,
-#card-container,
-.color-scheme-3,
-[class*="scheme-3"] {
-  background-color: var(--furvora-cream) !important;
-}
-
-/* Feature tabs section — white background not green */
-.containerv8,
-.product_tab_sec {
-  background-color: #fff !important;
-}
-
-/* Trust/multicolumn section — clean cream */
-.multicolumn {
-  background-color: var(--furvora-cream) !important;
-}
-
-/* Multicolumn titles */
-.multicolumn-card__title {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: var(--furvora-text) !important;
-}
-
-.multicolumn-card p {
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 1.3rem !important;
-  color: var(--furvora-text-soft) !important;
-}
-
-/* Section heading for trust bar */
-.multicolumn .title {
-  font-family: 'Playfair Display', serif !important;
-  font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
-  font-weight: 600 !important;
-}
-
-/* Reviews section background */
-#card-container {
-  background-color: var(--furvora-cream) !important;
-  padding: 40px 0 !important;
-}
-
-/* Review cards */
-.swiper-slide {
-  background: #fff !important;
-  border: 1px solid var(--furvora-border) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 2px 16px rgba(42,34,25,0.06) !important;
-  animation: none !important;
-}
-
-/* Newsletter section */
-.newsletter {
-  background-color: #fff !important;
-}
-
-/* Tighten section spacing */
-.shopify-section {
-  margin-top: 0 !important;
-}
-
-/* Remove excessive padding between sections */
-.section-divider {
-  margin-top: -2px !important;
-}
-
-/* ── NAV LINKS VISIBLE ON WHITE BACKGROUND ──────────────────── */
-/* When not scrolled, header is transparent — but on inner pages
-   or when announcement bar is present, background is white so
-   links must be dark */
-.header-wrapper .header__menu-item,
-.header-wrapper .header__menu-item span {
-  color: var(--furvora-text) !important;
-}
-
-.header-wrapper .header__menu-item:hover,
-.header-wrapper .header__menu-item:hover span {
-  color: var(--furvora-orange) !important;
-}
-
-.header-wrapper .header__icon svg {
-  fill: var(--furvora-text) !important;
-  stroke: var(--furvora-text) !important;
-}
-
-/* Only go white when scrolled AND on homepage over video */
-.header-wrapper--transparent:not(.header-wrapper--scrolled) .header__menu-item,
-.header-wrapper--transparent:not(.header-wrapper--scrolled) .header__icon svg {
-  color: #fff !important;
-  fill: #fff !important;
-  stroke: #fff !important;
-}
-
-/* ── TOP ANNOUNCEMENT BAR — SLIM & PREMIUM ──────────────────── */
-.announcement-bar {
-  background-color: #1a1a1a !important;
-  padding: 8px 0 !important;
-}
-
-.announcement-bar__message,
-.announcement-bar__message * {
-  color: #f9f5f0 !important;
-  font-family: 'DM Sans', sans-serif !important;
-  font-size: 1.1rem !important;
-  letter-spacing: 0.1em !important;
-  font-weight: 400 !important;
-}
-
-/* Hide the emojis via font-size trick won't work — 
-   update text in Shopify admin instead */
-.announcement-bar .slider-button svg {
-  fill: #f9f5f0 !important;
 }
