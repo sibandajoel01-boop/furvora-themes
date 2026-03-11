@@ -1293,3 +1293,51 @@ predictive-search,
 .color-scheme-2 .title-wrapper {
   padding: 0 24px !important;
 }
+
+/* ============================================================
+   PRODUCT CARDS — FIX TEXT VISIBILITY
+   ============================================================ */
+
+/* Card needs white background for text area */
+.color-scheme-2 .card--product {
+  background: #fff !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Image should not overlap text */
+.color-scheme-2 .card__media {
+  position: relative !important;
+  flex-shrink: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 14px 14px 0 0 !important;
+  overflow: hidden !important;
+}
+
+/* Text area below image */
+.color-scheme-2 .card-information {
+  background: #fff !important;
+  padding: 12px 14px 16px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Title dark on white */
+.color-scheme-2 .card__heading,
+.color-scheme-2 .card__heading a {
+  color: #2B2B2B !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* Price */
+.color-scheme-2 .card-information .price-item {
+  color: #2F5D50 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+}
