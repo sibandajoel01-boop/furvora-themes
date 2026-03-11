@@ -1133,3 +1133,74 @@ predictive-search,
 .featured-collection .card-information {
   padding: 10px 10px 12px !important;
 }
+
+/* ============================================================
+   HOMEPAGE PRODUCT SECTION — POLISHED
+   ============================================================ */
+
+/* Section title */
+.featured-collection .collection__title,
+.featured-collection h2 {
+  color: #F6F2EA !important;
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(2rem, 3vw, 2.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 32px !important;
+}
+
+/* Card */
+.featured-collection .card-wrapper {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10) !important;
+  transition: transform 220ms ease, box-shadow 220ms ease !important;
+}
+
+.featured-collection .card-wrapper:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16) !important;
+}
+
+/* Product image */
+.featured-collection .card__media img {
+  border-radius: 14px 14px 0 0 !important;
+  object-fit: cover !important;
+}
+
+/* Product title */
+.featured-collection .card__heading,
+.featured-collection .card__heading a {
+  color: #2B2B2B !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Price */
+.featured-collection .price-item {
+  color: #2F5D50 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+/* Add to cart button */
+.featured-collection .card__footer .button,
+.featured-collection .quick-add__submit {
+  background-color: #2F5D50 !important;
+  color: #F6F2EA !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.06em !important;
+  padding: 10px 16px !important;
+  width: 100% !important;
+}
+
+.featured-collection .card__footer .button:hover,
+.featured-collection .quick-add__submit:hover {
+  background-color: #234840 !important;
+}
