@@ -47,72 +47,6 @@
         "padding_bottom": 60
       }
     },
-    "multicolumn_exkm4E": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_L3GcYM": {
-          "type": "column",
-          "settings": {
-            "title": "24/7 Support",
-            "text": "<p>We're always here when you need us.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_jRf9Lf": {
-          "type": "column",
-          "settings": {
-            "title": "Fast Delivery",
-            "text": "<p>Express shipping on every order.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_FMDLwF": {
-          "type": "column",
-          "settings": {
-            "title": "Secure Checkout",
-            "text": "<p>Your payment is always protected.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_QEiUJA": {
-          "type": "column",
-          "settings": {
-            "title": "30-Day Returns",
-            "text": "<p>Not happy? Send it back, no questions.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_L3GcYM",
-        "column_jRf9Lf",
-        "column_FMDLwF",
-        "column_QEiUJA"
-      ],
-      "custom_css": [
-        "h2 {font-size: 38px; text-align: center; padding-left: 26px;}"
-      ],
-      "settings": {
-        "title": "Why Furvora",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 4,
-        "column_alignment": "center",
-        "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "rich_text_fTmy7t": {
       "type": "rich-text",
       "blocks": {
@@ -195,7 +129,6 @@
     "custom_liquid_XyydaX",
     "custom_liquid_gQ9dxx",
     "featured_collection1",
-    "multicolumn_exkm4E",
     "rich_text_fTmy7t",
     "custom_liquid_JpTVmw",
     "newsletter_EcE7wE",
