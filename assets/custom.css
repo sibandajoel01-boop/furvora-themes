@@ -889,3 +889,98 @@ predictive-search,
 .color-scheme-2 .button:hover {
   background-color: rgba(246,242,234,0.1) !important;
 }
+
+/* ============================================================
+   BRAND STORY PAGE — FULL WIDTH, NO CARD
+   ============================================================ */
+.template-page .main-page-title,
+.template-page__about-us .main-page-title {
+  display: none !important;
+}
+
+.main-page-title { display: none !important; }
+
+/* Remove the card/container wrapper */
+.template-page .page-width,
+.template-page__about-us .page-width {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.template-page .rte,
+.template-page__about-us .rte {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Remove card background and padding */
+.template-page .main-page,
+.template-page__about-us .main-page {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* ============================================================
+   GREEN PRODUCT SECTIONS — ALL PAGES
+   ============================================================ */
+
+/* Collection / Shop page */
+.template-collection .collection,
+.template-collection main,
+.template-collection #MainContent {
+  background-color: #2F5D50 !important;
+}
+
+.template-collection .collection__title,
+.template-collection h1 {
+  color: #F6F2EA !important;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.template-collection .card-wrapper,
+.template-collection .card--product {
+  background-color: #fff !important;
+  border-radius: 12px !important;
+}
+
+.template-collection .card__heading a,
+.template-collection .price-item {
+  color: #2B2B2B !important;
+}
+
+/* Search results page */
+.template-search #MainContent {
+  background-color: #F6F2EA !important;
+}
+
+/* Active filters, sort buttons on collection */
+.template-collection .facets__summary,
+.template-collection .facets__heading,
+.template-collection .filter-and-sort__container {
+  color: #F6F2EA !important;
+}
+
+.template-collection .select__select,
+.template-collection .facets__summary {
+  border-color: rgba(246,242,234,0.3) !important;
+  color: #F6F2EA !important;
+  background: transparent !important;
+}
+
+.template-collection .facets__disclosure-vertical .facets__header,
+.template-collection .facets__label {
+  color: #F6F2EA !important;
+}
+
+/* Pagination on collection page */
+.template-collection .pagination__list a,
+.template-collection .pagination__list span {
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.3) !important;
+}
+
+.template-collection .pagination__item--current {
+  background-color: rgba(246,242,234,0.15) !important;
+}
