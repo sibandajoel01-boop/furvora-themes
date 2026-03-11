@@ -984,3 +984,126 @@ predictive-search,
 .template-collection .pagination__item--current {
   background-color: rgba(246,242,234,0.15) !important;
 }
+
+/* ============================================================
+   BRAND STORY PAGE — FULL STYLES
+   ============================================================ */
+.fv-story { font-family: 'Inter', sans-serif; color: #2B2B2B; overflow: hidden; }
+
+.fv-hook { background-color: #1C1C1A; padding: 120px 40px; text-align: center; position: relative; }
+.fv-hook::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(47,93,80,0.25) 0%, transparent 70%); pointer-events: none; }
+.fv-hook-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(246,242,234,0.4); margin-bottom: 32px; display: block; }
+.fv-hook-line { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; line-height: 1.1; color: #F6F2EA; letter-spacing: -0.02em; max-width: 820px; margin: 0 auto 32px; }
+.fv-hook-line em { font-style: italic; color: #D47A54; }
+.fv-hook-sub { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: rgba(246,242,234,0.55); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+
+.fv-truth { background-color: #2F5D50; padding: 80px 40px; text-align: center; }
+.fv-truth-text { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-style: italic; color: #F6F2EA; max-width: 680px; margin: 0 auto; line-height: 1.65; }
+
+.fv-letter { background-color: #F6F2EA; padding: 100px 40px; display: flex; justify-content: center; }
+.fv-letter-inner { max-width: 640px; width: 100%; }
+.fv-letter-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #2F5D50; margin-bottom: 40px; display: block; }
+.fv-letter-salutation { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: #2B2B2B; margin-bottom: 32px; line-height: 1.3; }
+.fv-letter-body { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: #5A5046; line-height: 1.85; margin-bottom: 24px; }
+.fv-letter-body strong { font-weight: 500; color: #2B2B2B; }
+
+.fv-moment { background-color: #E8DDCF; padding: 100px 40px; display: flex; justify-content: center; }
+.fv-moment-inner { max-width: 640px; width: 100%; }
+.fv-moment-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(43,43,43,0.4); margin-bottom: 40px; display: block; }
+.fv-moment-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: #2B2B2B; line-height: 1.2; margin-bottom: 32px; }
+.fv-moment-text { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 300; color: #5A5046; line-height: 1.85; margin-bottom: 20px; }
+
+.fv-promise { background-color: #1C1C1A; padding: 100px 40px; display: flex; flex-direction: column; align-items: center; }
+.fv-promise-label { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(246,242,234,0.35); margin-bottom: 56px; }
+.fv-promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; max-width: 800px; width: 100%; border: 1px solid rgba(246,242,234,0.08); border-radius: 16px; overflow: hidden; }
+.fv-promise-col { padding: 48px 40px; }
+.fv-promise-col:first-child { border-right: 1px solid rgba(246,242,234,0.08); }
+.fv-promise-col-title { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 28px; }
+.fv-promise-col:first-child .fv-promise-col-title { color: #D47A54; }
+.fv-promise-col:last-child .fv-promise-col-title { color: #6BAF9E; }
+.fv-promise-item { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300; color: rgba(246,242,234,0.75); line-height: 1.6; margin-bottom: 20px; padding-left: 16px; border-left: 2px solid rgba(246,242,234,0.1); }
+
+.fv-number { background-color: #2F5D50; padding: 100px 40px; text-align: center; }
+.fv-number-stat { font-family: 'Playfair Display', serif; font-size: clamp(5rem, 14vw, 12rem); font-weight: 700; color: #F6F2EA; line-height: 1; letter-spacing: -0.03em; margin-bottom: 24px; }
+.fv-number-label { font-family: 'Inter', sans-serif; font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 300; color: rgba(246,242,234,0.7); max-width: 480px; margin: 0 auto 16px; line-height: 1.7; }
+.fv-number-sub { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2vw, 1.6rem); font-style: italic; color: #F6F2EA; }
+
+.fv-signoff { background-color: #F6F2EA; padding: 100px 40px; display: flex; justify-content: center; }
+.fv-signoff-inner { max-width: 560px; width: 100%; text-align: center; }
+.fv-signoff-closing { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 300; color: #5A5046; margin-bottom: 12px; line-height: 1.7; }
+.fv-signoff-name { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.6rem); font-style: italic; font-weight: 400; color: #2B2B2B; margin-bottom: 8px; }
+.fv-signoff-title { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #2F5D50; margin-bottom: 56px; }
+.fv-signoff-divider { width: 48px; height: 2px; background-color: #2F5D50; margin: 0 auto 48px; opacity: 0.3; }
+.fv-signoff-cta { display: inline-block; background-color: #2F5D50; color: #F6F2EA; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 40px; border-radius: 8px; text-decoration: none; transition: background-color 200ms ease, transform 200ms ease; }
+.fv-signoff-cta:hover { background-color: #234840; transform: translateY(-2px); color: #F6F2EA; }
+
+@media (max-width: 640px) {
+  .fv-hook, .fv-truth, .fv-letter, .fv-moment, .fv-promise, .fv-number, .fv-signoff { padding: 72px 24px; }
+  .fv-promise-grid { grid-template-columns: 1fr; }
+  .fv-promise-col:first-child { border-right: none; border-bottom: 1px solid rgba(246,242,234,0.08); }
+}
+
+/* Hide the default page title and wrapper on about page */
+.template-page .main-page-title { display: none !important; }
+.template-page .page-width { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+.template-page .rte { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+
+/* ============================================================
+   COLLECTIONS / SHOP PAGE — Forest Green
+   ============================================================ */
+.template-collection #MainContent,
+.template-collection .collection {
+  background-color: #2F5D50 !important;
+}
+
+.template-collection .collection__title {
+  color: #F6F2EA !important;
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* Cards stay white */
+.template-collection .card-wrapper,
+.template-collection .card--product {
+  background-color: #fff !important;
+  border-radius: 12px !important;
+  border: none !important;
+}
+
+.template-collection .card__heading a,
+.template-collection .price-item,
+.template-collection .price {
+  color: #2B2B2B !important;
+}
+
+/* Filters and sort */
+.template-collection .facets__summary,
+.template-collection .facets__label,
+.template-collection .facets__heading,
+.template-collection .facets__disclosure-vertical .facets__header {
+  color: #F6F2EA !important;
+}
+
+.template-collection .select__select {
+  background: transparent !important;
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.3) !important;
+}
+
+/* Pagination */
+.template-collection .pagination__list a,
+.template-collection .pagination__list span {
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.25) !important;
+}
+
+.template-collection .pagination__item--current {
+  background-color: rgba(246,242,234,0.15) !important;
+  color: #F6F2EA !important;
+}
+
+/* Active filter tags */
+.template-collection .active-facets__button {
+  background-color: rgba(246,242,234,0.15) !important;
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.2) !important;
+}
