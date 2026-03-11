@@ -1204,3 +1204,28 @@ predictive-search,
 .featured-collection .quick-add__submit:hover {
   background-color: #234840 !important;
 }
+
+/* ============================================================
+   HOMEPAGE PRODUCT GRID — MORE BREATHING ROOM
+   ============================================================ */
+.featured-collection .grid {
+  gap: 24px !important;
+}
+
+.featured-collection {
+  padding: 60px 40px !important;
+}
+
+.featured-collection .card__media,
+.featured-collection .media {
+  aspect-ratio: 4 / 5 !important;
+  max-height: none !important;
+}
+
+.featured-collection .card-information {
+  padding: 14px 14px 16px !important;
+}
+
+.featured-collection .card-wrapper {
+  border-radius: 16px !important;
+}
