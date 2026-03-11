@@ -1229,3 +1229,67 @@ predictive-search,
 .featured-collection .card-wrapper {
   border-radius: 16px !important;
 }
+
+/* ============================================================
+   PRODUCT SECTION — EXACT SELECTOR FIXES
+   ============================================================ */
+
+/* Title — force cream */
+.color-scheme-2 .title,
+.color-scheme-2 h2.title,
+.color-scheme-2 .collection__title,
+.color-scheme-2 .title-wrapper--no-top-margin .title {
+  color: #F6F2EA !important;
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* Grid gap */
+.color-scheme-2 .grid.product-grid {
+  gap: 20px !important;
+  padding: 0 20px !important;
+}
+
+/* Section padding */
+.color-scheme-2.shopify-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+/* Card image taller */
+.color-scheme-2 .card__media {
+  aspect-ratio: 4 / 5 !important;
+}
+
+/* ============================================================
+   PRODUCT SLIDER — EXACT FIXES
+   ============================================================ */
+
+/* Title cream */
+.color-scheme-2 .title-wrapper .title,
+.color-scheme-2 .title-wrapper--no-top-margin .title {
+  color: #F6F2EA !important;
+}
+
+/* Slider gap between cards */
+.color-scheme-2 .slider.product-grid {
+  gap: 20px !important;
+  padding: 0 24px 24px !important;
+}
+
+/* Each card */
+.color-scheme-2 .slider__slide {
+  padding: 0 !important;
+  margin-right: 20px !important;
+}
+
+/* Card image ratio */
+.color-scheme-2 .card__media {
+  aspect-ratio: 4 / 5 !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+/* Section padding top/bottom */
+.color-scheme-2 .collection__title-wrapper,
+.color-scheme-2 .title-wrapper {
+  padding: 0 24px !important;
+}
