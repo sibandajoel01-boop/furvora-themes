@@ -35,7 +35,6 @@ h1, h2, h3, h4, h5,
   line-height: 1.2;
   letter-spacing: -0.01em;
 }
-
 p, span, li, label, input, textarea, select {
   font-family: 'Inter', sans-serif !important;
 }
@@ -123,7 +122,7 @@ p, span, li, label, input, textarea, select {
 #shopify-section-featured_collection1,
 [id*="featured_collection1"] {
   background-color: var(--f-green) !important;
-  padding: 56px 32px !important;
+  padding: 60px 48px !important;
 }
 
 /* Section title */
@@ -134,7 +133,7 @@ p, span, li, label, input, textarea, select {
   color: var(--f-cream) !important;
   font-family: 'Playfair Display', serif !important;
   font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 32px !important;
 }
 
 /* View all */
@@ -147,33 +146,43 @@ p, span, li, label, input, textarea, select {
 }
 
 /* ── PRODUCT CARDS ──────────────────────────────────────────── */
-.color-scheme-2 .card--product,
+
+/* Wrapper — breathing room between cards */
 .color-scheme-2 .card-wrapper {
   background: #fff !important;
-  border-radius: 12px !important;
+  border-radius: 14px !important;
   overflow: hidden !important;
   border: none !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.09) !important;
   transition: transform 220ms ease, box-shadow 220ms ease !important;
+  margin: 8px !important;
 }
 .color-scheme-2 .card-wrapper:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.14) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15) !important;
 }
 
-/* Image */
+/* Card itself */
+.color-scheme-2 .card--product {
+  background: #fff !important;
+  border-radius: 14px !important;
+}
+
+/* Image — square, fills card top */
 .color-scheme-2 .card__media {
   aspect-ratio: 1 / 1 !important;
-  border-radius: 12px 12px 0 0 !important;
+  border-radius: 14px 14px 0 0 !important;
   overflow: hidden !important;
+  display: block !important;
 }
 
-/* Info area */
+/* Info area — white, below image */
 .color-scheme-2 .card-information {
   background: #fff !important;
-  padding: 8px 10px 10px !important;
+  padding: 12px 14px 14px !important;
   position: relative !important;
   z-index: 2 !important;
+  display: block !important;
 }
 
 /* Product name */
@@ -181,40 +190,43 @@ p, span, li, label, input, textarea, select {
 .color-scheme-2 .card__heading a {
   color: #2B2B2B !important;
   font-family: 'Inter', sans-serif !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   font-weight: 500 !important;
   white-space: nowrap !important;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
-  margin-bottom: 2px !important;
+  margin-bottom: 4px !important;
+  display: block !important;
 }
 
-/* Price — compact */
+/* Price */
 .color-scheme-2 .price-item,
 .color-scheme-2 .price__regular .price-item,
 .color-scheme-2 .price__regular,
 .color-scheme-2 .price {
   color: var(--f-green) !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 600 !important;
-  line-height: 1.3 !important;
+  line-height: 1.4 !important;
+  display: block !important;
 }
 
-/* Add to cart — compact */
+/* Add to cart button */
 .color-scheme-2 .card__footer .button,
 .color-scheme-2 .quick-add__submit {
   background-color: var(--f-green) !important;
   color: #fff !important;
   border: none !important;
   border-radius: 6px !important;
-  font-size: 10px !important;
+  font-size: 11px !important;
   font-weight: 600 !important;
   letter-spacing: 0.04em !important;
-  padding: 5px 8px !important;
+  padding: 7px 12px !important;
   width: 100% !important;
   min-height: unset !important;
   height: auto !important;
   line-height: 1.4 !important;
+  margin-top: 8px !important;
 }
 .color-scheme-2 .card__footer .button:hover,
 .color-scheme-2 .quick-add__submit:hover {
@@ -351,10 +363,7 @@ predictive-search, .predictive-search {
 
 /* ── MOBILE ─────────────────────────────────────────────────── */
 @media (max-width: 767px) {
-  .color-scheme-2 .grid.product-grid,
-  .color-scheme-2 .slider.product-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+  .color-scheme-2 .card-wrapper { margin: 4px !important; }
 }
 
 /* ── ACCESSIBILITY ──────────────────────────────────────────── */
