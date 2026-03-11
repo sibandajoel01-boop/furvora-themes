@@ -787,3 +787,43 @@ predictive-search,
 .search-modal__close-button svg {
   stroke: #F6F2EA !important;
 }
+
+/* ============================================================
+   PRODUCT COLLECTION SECTION — Forest Green Background
+   ============================================================ */
+.featured-collection,
+#shopify-section-featured_collection1,
+[id*="featured_collection1"] {
+  background-color: #2F5D50 !important;
+}
+
+.featured-collection .title,
+.featured-collection h2,
+#shopify-section-featured_collection1 h2,
+#shopify-section-featured_collection1 .title {
+  color: #F6F2EA !important;
+  font-family: 'Playfair Display', serif !important;
+}
+
+/* Card backgrounds stay white so product images are clean */
+#shopify-section-featured_collection1 .card-wrapper,
+#shopify-section-featured_collection1 .card--product {
+  background: #fff !important;
+}
+
+/* Product titles and prices on green background */
+#shopify-section-featured_collection1 .card__heading a {
+  color: #2B2B2B !important;
+}
+
+/* View all button on green background */
+#shopify-section-featured_collection1 .button--tertiary,
+#shopify-section-featured_collection1 .link {
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.4) !important;
+}
+
+#shopify-section-featured_collection1 .button--tertiary:hover {
+  background-color: rgba(246,242,234,0.1) !important;
+  color: #F6F2EA !important;
+}
