@@ -707,3 +707,83 @@ footer,
 .section-divider {
   display: none !important;
 }
+
+/* ============================================================
+   SEARCH DROPDOWN — Forest Green
+   ============================================================ */
+predictive-search,
+.predictive-search {
+  background-color: #2F5D50 !important;
+  border: none !important;
+  border-radius: 0 0 12px 12px !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18) !important;
+}
+
+.predictive-search__results-list,
+.predictive-search__result {
+  background-color: #2F5D50 !important;
+}
+
+.predictive-search__item {
+  border-bottom: 1px solid rgba(246,242,234,0.08) !important;
+}
+
+.predictive-search__item:hover,
+.predictive-search__item--link:hover {
+  background-color: #234840 !important;
+}
+
+.predictive-search__item-heading,
+.predictive-search__item .price {
+  color: #F6F2EA !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.predictive-search__item-vendor,
+.predictive-search__item-type {
+  color: rgba(246,242,234,0.55) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.predictive-search__heading {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: rgba(246,242,234,0.45) !important;
+  padding: 16px 20px 8px !important;
+}
+
+.predictive-search__heading .link {
+  color: rgba(246,242,234,0.7) !important;
+}
+
+/* Search input bar */
+.search__input,
+.search-modal__input {
+  background-color: #F6F2EA !important;
+  border: none !important;
+  font-family: 'Inter', sans-serif !important;
+  color: #2B2B2B !important;
+  border-radius: 8px !important;
+}
+
+.search__input::placeholder,
+.search-modal__input::placeholder {
+  color: rgba(43,43,43,0.4) !important;
+}
+
+/* Search modal background */
+.search-modal__form {
+  background-color: #2F5D50 !important;
+  padding: 20px !important;
+}
+
+.search-modal {
+  background-color: #2F5D50 !important;
+}
+
+.search-modal__close-button svg {
+  stroke: #F6F2EA !important;
+}
