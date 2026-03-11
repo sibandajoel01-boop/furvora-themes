@@ -1107,3 +1107,29 @@ predictive-search,
   color: #F6F2EA !important;
   border-color: rgba(246,242,234,0.2) !important;
 }
+
+/* ============================================================
+   HOMEPAGE PRODUCT CARDS — SMALLER, LESS CROWDED
+   ============================================================ */
+.featured-collection .card__media,
+.featured-collection .media {
+  aspect-ratio: 1 / 1 !important;
+  max-height: 220px !important;
+}
+
+.featured-collection .card-wrapper {
+  font-size: 13px !important;
+}
+
+.featured-collection .card__heading {
+  font-size: 13px !important;
+  margin-top: 8px !important;
+}
+
+.featured-collection .price {
+  font-size: 12px !important;
+}
+
+.featured-collection .card-information {
+  padding: 10px 10px 12px !important;
+}
