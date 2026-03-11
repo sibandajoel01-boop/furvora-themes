@@ -827,3 +827,33 @@ predictive-search,
   background-color: rgba(246,242,234,0.1) !important;
   color: #F6F2EA !important;
 }
+
+/* ── PRODUCT SECTION ON GREEN — TEXT FIXES ──────────────────── */
+#shopify-section-featured_collection1 .card__heading a,
+#shopify-section-featured_collection1 .card__heading,
+#shopify-section-featured_collection1 .full-unstyled-link {
+  color: #F6F2EA !important;
+}
+
+#shopify-section-featured_collection1 .card--product {
+  background: #234840 !important;
+  border-color: rgba(246,242,234,0.1) !important;
+}
+
+#shopify-section-featured_collection1 .price-item {
+  color: #F6F2EA !important;
+}
+
+/* View All button — white text visible */
+#shopify-section-featured_collection1 .button--tertiary,
+#shopify-section-featured_collection1 a.button,
+#shopify-section-featured_collection1 .collection__view-all {
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.5) !important;
+  background: transparent !important;
+}
+
+#shopify-section-featured_collection1 .button--tertiary:hover,
+#shopify-section-featured_collection1 .collection__view-all:hover {
+  background-color: rgba(246,242,234,0.1) !important;
+}
