@@ -558,3 +558,152 @@ p, span, li, label, input, textarea, select,
   from { opacity: 0.85; }
   to   { opacity: 1; }
 }
+
+/* ============================================================
+   FURVORA FOOTER — Complete Override
+   ============================================================ */
+
+/* ── FOOTER WRAPPER ─────────────────────────────────────────── */
+.footer-section,
+.footer,
+footer,
+[class*="footer"] {
+  background-color: #1C1C1A !important;
+  border-top: none !important;
+}
+
+/* ── FOOTER CONTENT TOP ─────────────────────────────────────── */
+.footer__content-top {
+  padding: 64px 0 48px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* ── FOOTER HEADINGS ────────────────────────────────────────── */
+.footer__heading,
+.footer [class*="heading"] {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: rgba(246, 242, 234, 0.45) !important;
+  margin-bottom: 20px !important;
+}
+
+/* ── FOOTER LINKS ───────────────────────────────────────────── */
+.footer__list li {
+  margin-bottom: 12px !important;
+}
+
+.footer__list li a,
+.footer a {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgba(246, 242, 234, 0.75) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.01em !important;
+  transition: color 180ms ease !important;
+}
+
+.footer__list li a:hover,
+.footer a:hover {
+  color: #F6F2EA !important;
+}
+
+/* ── FOOTER BRAND COLUMN ────────────────────────────────────── */
+.footer__column--brand p,
+.footer .footer-brand-text {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: rgba(246, 242, 234, 0.5) !important;
+  line-height: 1.75 !important;
+  max-width: 240px !important;
+}
+
+/* ── FOOTER ABOUT TEXT ──────────────────────────────────────── */
+.footer p {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 13px !important;
+  color: rgba(246, 242, 234, 0.55) !important;
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+}
+
+/* Remove bold highlights in footer paragraph */
+.footer p strong,
+.footer p b {
+  font-weight: 400 !important;
+  color: rgba(246, 242, 234, 0.55) !important;
+}
+
+/* ── FOOTER LOGO ────────────────────────────────────────────── */
+.footer__logo,
+.footer .header__heading-link {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #F6F2EA !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ── COUNTRY SELECTOR ───────────────────────────────────────── */
+.localization-form__select,
+.disclosure__button,
+.localization-selector {
+  background-color: transparent !important;
+  border: 1px solid rgba(246, 242, 234, 0.15) !important;
+  color: rgba(246, 242, 234, 0.6) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+  padding: 8px 14px !important;
+  transition: border-color 180ms ease !important;
+}
+
+.localization-form__select:hover,
+.disclosure__button:hover {
+  border-color: rgba(246, 242, 234, 0.35) !important;
+  color: #F6F2EA !important;
+  background-color: transparent !important;
+}
+
+/* ── FOOTER BOTTOM BAR ──────────────────────────────────────── */
+.footer__content-bottom {
+  padding: 20px 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.08) !important;
+  background-color: #1C1C1A !important;
+}
+
+.footer__content-bottom p,
+.footer__content-bottom span,
+.footer__copyright {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  color: rgba(246, 242, 234, 0.3) !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Hide duplicate brand name in bottom bar */
+.footer__content-bottom .footer__list {
+  display: none !important;
+}
+
+/* ── PAYMENT ICONS ──────────────────────────────────────────── */
+.footer__payment-icons {
+  opacity: 0.5 !important;
+  filter: grayscale(30%) !important;
+}
+
+.footer__payment-icons:hover {
+  opacity: 0.7 !important;
+}
+
+/* ── REMOVE WAVE / DIVIDER ABOVE FOOTER ─────────────────────── */
+.footer-section > svg,
+.footer > svg,
+.wave-divider,
+.section-divider {
+  display: none !important;
+}
