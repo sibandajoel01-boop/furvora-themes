@@ -857,3 +857,35 @@ predictive-search,
 #shopify-section-featured_collection1 .collection__view-all:hover {
   background-color: rgba(246,242,234,0.1) !important;
 }
+
+/* ── PRODUCT GRID ON GREEN — FORCED OVERRIDES ───────────────── */
+.color-scheme-2 .card__heading,
+.color-scheme-2 .card__heading a,
+.color-scheme-2 .card__heading h3,
+.color-scheme-2 .card__text,
+.color-scheme-2 .price,
+.color-scheme-2 .price-item,
+.color-scheme-2 .price__regular,
+.color-scheme-2 .price__sale,
+.color-scheme-2 a.full-unstyled-link,
+.color-scheme-2 .card-information__text {
+  color: #F6F2EA !important;
+}
+
+.color-scheme-2 .card--product,
+.color-scheme-2 .card-wrapper {
+  background-color: #234840 !important;
+  border-color: rgba(246,242,234,0.08) !important;
+}
+
+/* View all */
+.color-scheme-2 .button,
+.color-scheme-2 a.button {
+  color: #F6F2EA !important;
+  border-color: rgba(246,242,234,0.5) !important;
+  background: transparent !important;
+}
+
+.color-scheme-2 .button:hover {
+  background-color: rgba(246,242,234,0.1) !important;
+}
