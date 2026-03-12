@@ -357,7 +357,7 @@
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
 
-    {{ 'navbar-scroll.js' | asset_url | script_tag }}
+    {{ 'navbar-scroll.js' | asset_url | script_tag }} {% render 'furvora-pet-assistant' %}
 
   </body>
 </html>
